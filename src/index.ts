@@ -1,3 +1,5 @@
+import { isJSDocThisTag } from 'typescript';
+
 let message: string = 'Hello World';
 message += ' again';
 console.log(message);
@@ -39,3 +41,32 @@ type Product = { id: string };
 
 let user: User = { id: 'user-erewr' };
 let product: Product = { id: 'product-reewr3' };
+
+// classes
+class Animal {
+  private name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  move(distanceInMeters: number) {
+    console.log(`${this.name} moved ${distanceInMeters}m.`);
+  }
+}
+
+// Queue -> Generic type implementation
+class Queue<T> {
+  data: T[] = [];
+  push(item: T) {
+    this.data.push(item);
+  }
+  pop(): T | any {
+    return this.data.shift();
+  }
+}
+
+const queue = new Queue<number>();
+queue.push(123);
+queue.push('string');
+
+console.log(queue.pop().toPrecision(1));
+console.log(queue.pop().toPrecision(1));
