@@ -66,7 +66,7 @@ class Queue<T> {
 
 const queue = new Queue<number>();
 queue.push(123);
-queue.push('string');
+queue.push(12312);
 
 console.log(queue.pop().toPrecision(1));
 console.log(queue.pop().toPrecision(1));
